@@ -16,6 +16,7 @@
   gap: 20px;
   font-size: 18px;
   color: #49557e;
+  cursor: pointer;
 }
 
 /* .navbar-menu li {
