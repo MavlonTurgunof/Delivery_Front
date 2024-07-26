@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 
-function Header() {
+function Header({ setMenu }) {
   return (
     <div className="header">
       <div className="header-contents">
@@ -12,7 +12,11 @@ function Header() {
           mission is to setisfy your cravings and elevate your dining
           experience, one delicious meal at a time.
         </p>
-        <button>View Menu</button>
+        <button>
+          <a href="#food-display" onClick={() => setMenu("menu")}>
+            View Menu
+          </a>
+        </button>
       </div>
     </div>
   );

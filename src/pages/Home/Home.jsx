@@ -5,12 +5,12 @@ import ExploreMenu from "../../components/ExploreMenu/ExploreMenu";
 import FoodDisplay from "../../components/FoodDisplay/FoodDisplay";
 import AppDownload from "../../components/appDownload/appDownload";
 
-function Home() {
+function Home({ menu, setMenu }) {
   const [category, setCategory] = useState("All");
 
   return (
     <div>
-      <Header />
+      <Header menu={menu} setMenu={setMenu} />
       <ExploreMenu category={category} setCategory={setCategory} />
       <FoodDisplay category={category} />
       <AppDownload />

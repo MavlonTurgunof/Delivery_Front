@@ -39,6 +39,10 @@
   border-radius: 50px;
 }
 
+.header-contents button:hover {
+  background-color: antiquewhite;
+}
+
 @media (max-width: 1050px) {
   .header-contents {
     max-width: 45%;
