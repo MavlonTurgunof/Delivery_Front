@@ -29,19 +29,19 @@ function LoginPopup({ setShowLogin }) {
         <div className="login-popup-condition">
           <input type="checkbox" required />
           <p>By continuing I agree to the terms of use & privacy policy</p>
-
-          {currState === "Login" ? (
-            <p>
-              Create new account{" "}
-              <span onClick={() => setCurState("Sign up")}>Click here</span>
-            </p>
-          ) : (
-            <p>
-              Already had an account?{" "}
-              <span onClick={() => setCurState("Login")}>Login here</span>
-            </p>
-          )}
         </div>
+
+        {currState === "Login" ? (
+          <p>
+            Create new account{" "}
+            <span onClick={() => setCurState("Sign up")}>Click here</span>
+          </p>
+        ) : (
+          <p>
+            Already had an account?{" "}
+            <span onClick={() => setCurState("Login")}>Login here</span>
+          </p>
+        )}
       </form>
     </div>
   );
