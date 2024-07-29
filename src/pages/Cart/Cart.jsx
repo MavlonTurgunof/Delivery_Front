@@ -2,9 +2,35 @@ import React, { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 import { food_list } from "../../assets/assets";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast, Slide } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
-  const { cartItems, foof_list, removeFromCart } = useContext(StoreContext);
+  const { cartItems, foof_list, removeFromCart, getTotalCartAmount } =
+    useContext(StoreContext);
+  const navigate = useNavigate();
+
+  const notify = () => {
+    toast.error("You do not have any item", {
+      position: "top-center",
+      autoClose: 8000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      transition: Slide,
+    });
+  };
+
+  const handleProceedToCheckout = () => {
+    if (getTotalCartAmount() === 0) {
+      notify();
+    } else {
+      navigate("/order");
+    }
+  };
 
   return (
     <div className="cart">
@@ -44,19 +70,19 @@ const Cart = () => {
           <h2>Cart Totals</h2>
           <div className="cart-total-details">
             <p>Subtotal</p>
-            <p>{0}</p>
+            <p>{getTotalCartAmount()}</p>
           </div>
           <hr />
           <div className="cart-total-details">
             <p>Delivery Fee</p>
-            <p>{2}</p>
+            <p>${getTotalCartAmount() === 0 ? 0 : 10}</p>
           </div>
           <hr />
           <div className="cart-total-details">
             <b>Total</b>
-            <b>{0}</b>
+            <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 10}</b>
           </div>
-          <button>Proceed To Checkout</button>
+          <button onClick={handleProceedToCheckout}>Proceed To Checkout</button>
         </div>
         <hr />
         <div className="cart-promocode">
@@ -69,6 +95,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
