@@ -11,8 +11,7 @@ function Footer() {
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
             necessitatibus placeat corporis debitis sint ex molestias ut,
-            voluptatem culpa similique cum ipsam repudiandae perspiciatis,
-            perferendis doloremque in omnis, inventore qui?
+            voluptatem culpa similique cum ipsam repudiandae perspiciatis
           </p>
           <div className="footer-social-icons">
             <img src={assets.facebook_icon} alt="" />
