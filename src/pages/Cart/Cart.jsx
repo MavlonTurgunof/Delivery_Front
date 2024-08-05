@@ -7,7 +7,7 @@ import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
-  const { cartItems, foof_list, removeFromCart, getTotalCartAmount } =
+  const { cartItems, removeFromCart, getTotalCartAmount } =
     useContext(StoreContext);
   const navigate = useNavigate();
 

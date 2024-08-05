@@ -6,6 +6,8 @@ import Cart from "./pages/Cart/Cart";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -15,6 +17,7 @@ function App() {
     <>
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
       <div className="app">
+        <ToastContainer />
         <Navbar setShowLogin={setShowLogin} setMenu={setMenu} menu={menu} />
         <Routes>
           <Route path="/" element={<Home setMenu={setMenu} menu={menu} />} />

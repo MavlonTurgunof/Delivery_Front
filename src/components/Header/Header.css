@@ -61,4 +61,11 @@
   .header-contents button {
     padding: 2vh 4vh;
   }
+  .btn-display-food {
+    font-weight: 300;
+    padding: 0.5vw 1.1vw;
+    background-color: white;
+    font-size: max(0.5vw, 10px);
+    border-radius: 20px;
+  }
 }

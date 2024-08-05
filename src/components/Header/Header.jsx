@@ -12,7 +12,7 @@ function Header({ setMenu }) {
           mission is to setisfy your cravings and elevate your dining
           experience, one delicious meal at a time.
         </p>
-        <button>
+        <button className="btn-display-food">
           <a href="#food-display" onClick={() => setMenu("menu")}>
             View Menu
           </a>
