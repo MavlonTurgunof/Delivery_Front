@@ -15,7 +15,7 @@ function Navbar({ setShowLogin, setMenu, menu }) {
   };
 
   const navOrders = () => {
-    navigate("/order");
+    navigate("/myorders");
   };
 
   return (
